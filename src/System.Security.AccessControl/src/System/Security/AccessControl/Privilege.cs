@@ -23,7 +23,7 @@ using System.Runtime.Versioning;
 using System.Diagnostics.Contracts;
 using CultureInfo = System.Globalization.CultureInfo;
 using FCall = System.Security.Principal.Win32;
-using Luid = Interop.LUID;
+using Luid = Interop.mincore.LUID;
 
 namespace System.Security.AccessControl
 {
@@ -246,7 +246,7 @@ namespace System.Security.AccessControl
                                                     processHandle,
                                                     TokenAccessLevels.Impersonate | TokenAccessLevels.Query | TokenAccessLevels.AdjustPrivileges,
                                                     IntPtr.Zero,
-                                                    Interop.SECURITY_IMPERSONATION_LEVEL.SecurityImpersonation,
+                                                    Interop.mincore.SECURITY_IMPERSONATION_LEVEL.SecurityImpersonation,
                                                     System.Security.Principal.TokenType.TokenImpersonation,
                                                     ref this.threadHandle))
                                     {
@@ -491,15 +491,15 @@ namespace System.Security.AccessControl
                         this.tlsContents.IncrementReferenceCount();
                     }
 
-                    Interop.LUID_AND_ATTRIBUTES luidAndAttrs = new Interop.LUID_AND_ATTRIBUTES();
+                    Interop.mincore.LUID_AND_ATTRIBUTES luidAndAttrs = new Interop.mincore.LUID_AND_ATTRIBUTES();
                     luidAndAttrs.Luid = this.luid;
                     luidAndAttrs.Attributes = enable ? Interop.SE_PRIVILEGE_ENABLED : Interop.SE_PRIVILEGE_DISABLED;
 
-                    Interop.TOKEN_PRIVILEGE newState = new Interop.TOKEN_PRIVILEGE();
+                    Interop.mincore.TOKEN_PRIVILEGE newState = new Interop.mincore.TOKEN_PRIVILEGE();
                     newState.PrivilegeCount = 1;
                     newState.Privileges[0] = luidAndAttrs;
 
-                    Interop.TOKEN_PRIVILEGE previousState = new Interop.TOKEN_PRIVILEGE();
+                    Interop.mincore.TOKEN_PRIVILEGE previousState = new Interop.mincore.TOKEN_PRIVILEGE();
                     uint previousSize = 0;
 
                     //
@@ -613,15 +613,15 @@ namespace System.Security.AccessControl
                         (this.tlsContents.ReferenceCountValue > 1 ||
                           !this.tlsContents.IsImpersonating))
                     {
-                        Interop.LUID_AND_ATTRIBUTES luidAndAttrs = new Interop.LUID_AND_ATTRIBUTES();
+                        Interop.mincore.LUID_AND_ATTRIBUTES luidAndAttrs = new Interop.mincore.LUID_AND_ATTRIBUTES();
                         luidAndAttrs.Luid = this.luid;
                         luidAndAttrs.Attributes = (this.initialState ? Interop.SE_PRIVILEGE_ENABLED : Interop.SE_PRIVILEGE_DISABLED);
 
-                        Interop.TOKEN_PRIVILEGE newState = new Interop.TOKEN_PRIVILEGE();
+                        Interop.mincore.TOKEN_PRIVILEGE newState = new Interop.mincore.TOKEN_PRIVILEGE();
                         newState.PrivilegeCount = 1;
                         newState.Privileges[0] = luidAndAttrs;
 
-                        Interop.TOKEN_PRIVILEGE previousState = new Interop.TOKEN_PRIVILEGE();
+                        Interop.mincore.TOKEN_PRIVILEGE previousState = new Interop.mincore.TOKEN_PRIVILEGE();
                         uint previousSize = 0;
 
                         if (false == Interop.mincore.AdjustTokenPrivileges(

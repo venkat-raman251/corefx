@@ -151,7 +151,7 @@ internal partial class Interop
         bool LookupPrivilegeValue(
             [In]     string lpSystemName,
             [In]     string lpName,
-            [In, Out] ref LUID Luid);
+            [In, Out] ref mincore.LUID Luid);
 
         [DllImport(
              "api-ms-win-security-base-l1-1-0",
