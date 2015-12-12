@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))\dir.props" />
+  <PropertyGroup>
+    <AssemblyName>System.Security.AccessControl</AssemblyName>
+    <ProjectGuid>{ADAC6D3E-400A-464B-903B-BE4A7A8C08D4}</ProjectGuid>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <!-- Default configurations to help VS understand the options -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'net46_Debug|AnyCPU'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'net46_Release|AnyCPU'" />
+  
+  <ItemGroup Condition="'$(TargetGroup)'!='net46'">
+    <Compile Include="System\Security\AccessControl\ACE.cs" />
+    <Compile Include="System\Security\AccessControl\ACL.cs" />
+    <Compile Include="System\Security\AccessControl\CommonObjectSecurity.cs" />
+    <Compile Include="System\Security\AccessControl\Enums.cs" />
+    <Compile Include="System\Security\AccessControl\NativeObjectSecurity.cs" />
+    <Compile Include="System\Security\AccessControl\ObjectSecurity.cs" />
+    <Compile Include="System\Security\AccessControl\ObjectSecurityT.cs" />
+    <Compile Include="System\Security\AccessControl\Privilege.cs" />
+    <Compile Include="System\Security\AccessControl\PrivilegeNotHeldException.cs" />
+    <Compile Include="System\Security\AccessControl\SecurityDescriptor.cs" />
+    <Compile Include="System\Security\AccessControl\Rules.cs" />
+    <Compile Include="System\Security\AccessControl\Win32.cs" />
+    <Compile Include="System\Security\Principal\Win32.cs" />
+    <Compile Include="System\Security\SafeSecurityHandles.cs" />
+    <!-- PInvoke sources -->
+    <Compile Include="Interop\Interop.Manual.cs" />
+    <Compile Include="..\..\Common\src\System\NotImplemented.cs" />
+    <Compile Include="..\..\Common\src\Interop\Windows\mincore\Interop.LUID.cs" />
+    <Compile Include="..\..\Common\src\Interop\Windows\mincore\Interop.LUIDAndAttributes.cs" />
+    <Compile Include="..\..\Common\src\Interop\Windows\mincore\Interop.LUIDAndAttributes1.cs" />
+    <Compile Include="..\..\Common\src\Interop\Windows\mincore\Interop.TokenPrivilege.cs" />
+    <Compile Include="..\..\Common\src\Interop\Windows\mincore\Interop.SecurityImpersonationLevel.cs" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetGroup)'=='net46'">
+    <TargetingPackReference Include="mscorlib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="project.json" />
+  </ItemGroup>
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.targets))\dir.targets" />
+</Project>
