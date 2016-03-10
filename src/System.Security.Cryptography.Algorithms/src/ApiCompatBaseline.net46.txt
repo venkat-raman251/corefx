@@ -1,0 +1,9 @@
+# DevDiv: Bug 145560 : These will go away once we switch the desktop facade baseline to 4.6.1.
+MembersMustExist : Member 'System.Security.Cryptography.ECDsa.HashData(System.Byte[], System.Int32, System.Int32, System.Security.Cryptography.HashAlgorithmName)' does not exist in the implementation but it does exist in the contract.
+MembersMustExist : Member 'System.Security.Cryptography.ECDsa.HashData(System.IO.Stream, System.Security.Cryptography.HashAlgorithmName)' does not exist in the implementation but it does exist in the contract.
+MembersMustExist : Member 'System.Security.Cryptography.ECDsa.SignData(System.Byte[], System.Int32, System.Int32, System.Security.Cryptography.HashAlgorithmName)' does not exist in the implementation but it does exist in the contract.
+MembersMustExist : Member 'System.Security.Cryptography.ECDsa.SignData(System.Byte[], System.Security.Cryptography.HashAlgorithmName)' does not exist in the implementation but it does exist in the contract.
+MembersMustExist : Member 'System.Security.Cryptography.ECDsa.SignData(System.IO.Stream, System.Security.Cryptography.HashAlgorithmName)' does not exist in the implementation but it does exist in the contract.
+MembersMustExist : Member 'System.Security.Cryptography.ECDsa.VerifyData(System.Byte[], System.Byte[], System.Security.Cryptography.HashAlgorithmName)' does not exist in the implementation but it does exist in the contract.
+MembersMustExist : Member 'System.Security.Cryptography.ECDsa.VerifyData(System.Byte[], System.Int32, System.Int32, System.Byte[], System.Security.Cryptography.HashAlgorithmName)' does not exist in the implementation but it does exist in the contract.
+MembersMustExist : Member 'System.Security.Cryptography.ECDsa.VerifyData(System.IO.Stream, System.Byte[], System.Security.Cryptography.HashAlgorithmName)' does not exist in the implementation but it does exist in the contract.

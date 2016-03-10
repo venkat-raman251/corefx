@@ -1,0 +1,2 @@
+MembersMustExist : Member 'System.ComponentModel.DataAnnotations.RegularExpressionAttribute.MatchTimeoutInMilliseconds.get()' does not exist in the implementation but it does exist in the contract.
+MembersMustExist : Member 'System.ComponentModel.DataAnnotations.RegularExpressionAttribute.MatchTimeoutInMilliseconds.set(System.Int32)' does not exist in the implementation but it does exist in the contract.
