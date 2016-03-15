@@ -1,4 +1,4 @@
-# DevDiv: Bug 1179822: ProjectN is missing the implementation of some System.Diagnostics.Tracing contract API
+# DevDiv: Bug 1179822: Desktop is missing the implementation of some System.Diagnostics.Tracing contract API
 MembersMustExist : Member 'System.Diagnostics.Tracing.EventAttribute.Channel.get()' does not exist in the implementation but it does exist in the contract.
 MembersMustExist : Member 'System.Diagnostics.Tracing.EventAttribute.Channel.set(System.Diagnostics.Tracing.EventChannel)' does not exist in the implementation but it does exist in the contract.
 MembersMustExist : Member 'System.Diagnostics.Tracing.EventWrittenEventArgs.Channel.get()' does not exist in the implementation but it does exist in the contract.
